@@ -44,7 +44,7 @@ export default async function Dashboard() {
                                 <div className="py-2" key={product.id}>
                                     <h2 className="py-2">{product.name}</h2>
                                     <div className="flex items-baseline gap-4">
-                                        <Image src={product.image!} alt={product.name} width={36} height={36}/>
+                                        <Image src={product.image!} alt={product.name} width={36} height={36} priority={true} className="w-auto"/>
                                         <p>{formatPrice(product.unit_amount)}</p>
                                         <p>Quantity: {product.quantity}</p>
                                     </div>
