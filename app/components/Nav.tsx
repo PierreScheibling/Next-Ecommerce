@@ -13,7 +13,7 @@ import DarkLight from './DarkLight'
 export default function Nav({user}: Session) {
     const cartStore = useCartStore()
     return(
-        <nav className="flex justify-between items-center py-12">
+        <nav className="flex justify-between items-center py-8 lg:py-12">
             <Link href={"/"}>
                 <h1 className='font-lobster text-xl'>Styled</h1>
             </Link>

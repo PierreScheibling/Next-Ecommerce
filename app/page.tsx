@@ -10,7 +10,7 @@ const getProducts = async() => {
 
   const productWithPrices = await Promise.all(
     products.data.map(async (product) => {
-      const prices = await stripe.prices.list({product: product.id})
+      const prices = await stripe.prices.list({product: product.id}) 
       const features = product.metadata.features || ""
       return {
         id: product.id,
@@ -20,6 +20,7 @@ const getProducts = async() => {
         description: product.description,
         currency: prices.data[0].currency,
         metadata: {features},
+        category: product.metadata.category,
       }
     })
   )
@@ -28,11 +29,30 @@ const getProducts = async() => {
 
 export default async function Home() {
   const products = await getProducts();
+  const categories = Array.from(
+    new Set(products.map((product) => product.category))
+  );
+
   return (
-    <main className="grid lg:grid-cols-5 grid-cols-fluid gap-10">
-      {products.map((product) => (
-        <Product {...product} key={product.id}/>
-      ))}
-    </main>
-  )
+    <div>
+      <nav className="grid grid-cols-3 md:grid-cols-7 justify-center gap-4 mb-4">
+          <button className="mx-2 px-4 py-2 bg-gray-100 rounded-md text-xs"
+          >All</button>
+        {categories.map((category) => (
+          <button
+            key={category}
+            className="mx-2 px-4 py-2 bg-gray-100 rounded-md text-xs"
+          >
+            {category}
+          </button>
+        ))}
+      </nav>
+      <main className="grid items-center lg:grid-cols-5 grid-cols-fluid gap-10">
+        {products.sort(() => Math.random() - 0.5).map((product) => (
+        <Product {...product} key={product.id} />
+        ))}
+      </main>
+    </div>
+  );
 }
+// .filter((product) => product.category === "Accessories")

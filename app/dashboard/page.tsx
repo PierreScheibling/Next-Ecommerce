@@ -6,7 +6,6 @@ import Image from 'next/image'
 
 export const revalidate = 0
 
-
 const fetchOrders = async () => {
     const prisma  = new PrismaClient()
     const user = await getServerSession(authOptions)
@@ -34,11 +33,8 @@ export default async function Dashboard() {
             <div className="font-medium">
                 {orders.map((order) => (
                     <div key={order.id} className="flex flex-col rounded-lg pt-6 px-6 pb-3 my-4 bg-base-200">
-                        <div className="grid grid-cols-2 md:grid-cols-3 mb-2">
+                        <div className="grid grid-cols-2 mb-2">
                             <p>Date : {new Date(order.createdDate).toLocaleDateString('en-GB')}</p>
-                            <p className="hidden md:block text-xs text-center">
-                            Status: {" "}<span className={`${order.status === 'complete' ? "bg-teal-500" : "bg-orange-500"} text-white py-1 rounded-md px-2 mx-2 text-xs`}>{order.status}</span>
-                            </p>
                             <p className="flex justify-end">Total: {formatPrice(order.amount)}</p>
                         </div>
                         <div className="text-xs grid grid-cols-4 items-center gap-2 py-2">
@@ -54,8 +50,11 @@ export default async function Dashboard() {
                                 </div>
                             ))}
                         </div>
-                        <div className="flex">
-                            <p className="text-xs font-thin mt-1">Order reference: {order.id}</p>
+                        <div className="grid grid-cols-2 mb-2 mt-2">
+                            <p className="text-xs font-thin mt-1 items-center">Order reference: {order.id}</p>
+                            <p className="hidden md:flex text-xs justify-end items-center">
+                            Status: {" "}<span className={`${order.status === 'complete' ? "bg-teal-500" : "bg-orange-500"} text-white py-1 rounded-md px-2 mx-2 text-xs`}>{order.status}</span>
+                            </p>
                         </div>
                     </div>
                 ))}
