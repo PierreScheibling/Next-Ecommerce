@@ -6,6 +6,8 @@ export type ProductType  = {
     id: string
     description: string
     metadata: MetadataType
+    size: string[]
+    category: string
 }
 
 type MetadataType = {

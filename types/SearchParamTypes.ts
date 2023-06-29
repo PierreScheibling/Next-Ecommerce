@@ -9,6 +9,8 @@ type SearchParams = {
     id: string
     description: string | null
     features: string
+    size: string[]
+    category: string
 }
 
 export type SearchParamTypes = {

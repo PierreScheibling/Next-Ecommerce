@@ -9,11 +9,14 @@ const getProducts = async() => {
   const products = await stripe.products.list({
     limit: 3,
   });
+  console.log(products.data)
 
   const productWithPrices = await Promise.all(
     products.data.map(async (product) => {
       const prices = await stripe.prices.list({product: product.id}) 
       const features = product.metadata.features || ""
+      const retrievedProduct = await stripe.products.retrieve(product.id);
+      const sizes = retrievedProduct.metadata.size ? retrievedProduct.metadata.size.split(',') : [];
       return {
         id: product.id,
         name: product.name,
@@ -23,6 +26,7 @@ const getProducts = async() => {
         currency: prices.data[0].currency,
         metadata: {features},
         category: product.metadata.category,
+        size: sizes,
       }
     })
   )
