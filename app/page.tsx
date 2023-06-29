@@ -6,7 +6,9 @@ const getProducts = async() => {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
     apiVersion: "2022-11-15"
   })
-  const products = await stripe.products.list()
+  const products = await stripe.products.list({
+    limit: 3,
+  });
 
   const productWithPrices = await Promise.all(
     products.data.map(async (product) => {
@@ -48,8 +50,8 @@ export default async function Home() {
         ))}
       </nav>
       <main className="grid items-center lg:grid-cols-5 grid-cols-fluid gap-10">
-        {products.sort(() => Math.random() - 0.5).map((product) => (
-        <Product {...product} key={product.id} />
+        {products.map((product) => (
+          <Product {...product} key={product.id} />
         ))}
       </main>
     </div>

@@ -14,9 +14,44 @@ export default function Nav({user}: Session) {
     const cartStore = useCartStore()
     return(
         <nav className="flex justify-between items-center py-8 lg:py-12">
-            <Link href={"/"}>
-                <h1 className='font-lobster text-xl'>Styled</h1>
-            </Link>
+            <div className="flex items-center">
+                <Link href={"/"} className="flex">
+                    <h1 className='font-lobster text-3xl'>Blush.</h1>
+                    <div className="h-8 border-r pr-4"></div>
+                </Link>
+                {/* {Dark mode} */}
+                <motion.div
+                    key="daiklight"
+                    className="mx-6 text-sm justify-center"
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3, duration: 1.5}}
+                >
+                    <DarkLight />
+                </motion.div>
+                <Link href={"/"} className="flex">
+                    <motion.div
+                        key="home"
+                        className="mx-6 text-sm justify-center"
+                        initial={{ opacity: 0, x: -100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.8, duration: 1.5}}
+                    >
+                    Home
+                    </motion.div>
+                </Link>
+                <Link href={"/"} className="flex">
+                    <motion.div
+                        key="products"
+                        className="mx-6 text-sm justify-center"
+                        initial={{ opacity: 0, x: -100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 1.3, duration: 1.5}}
+                    >
+                        Products
+                    </motion.div>
+                </Link>
+            </div>
             <ul className="flex items-center gap-8">
                 {/* Toggle the cart */}
                 <li onClick={() => cartStore.toggleCart()} className="flex items-center relative cursor-pointer">
@@ -29,8 +64,6 @@ export default function Nav({user}: Session) {
                         )}
                     </AnimatePresence>
                 </li>
-                {/* {Dark mode} */}
-                <DarkLight />
                 {/* If the user is not sign In */}
                 {!user && (
                     <li className="btn btn-primary text-white py-2 px-4">
