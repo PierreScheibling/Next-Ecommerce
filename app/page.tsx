@@ -42,18 +42,18 @@ export default async function Home() {
   return (
     <div>
       <nav className="grid grid-cols-3 md:grid-cols-7 justify-center gap-4 mb-4">
-          <button className="mx-2 px-4 py-2 bg-gray-100 rounded-md text-xs"
+          <button className="mr-2 px-4 py-2 md:mb-8 bg-gray-100 text-xs"
           >All</button>
         {categories.map((category) => (
           <button
             key={category}
-            className="mx-2 px-4 py-2 bg-gray-100 rounded-md text-xs"
+            className="mr-2 px-4 py-2 md:mb-8 bg-gray-100 text-xs"
           >
             {category}
           </button>
         ))}
       </nav>
-      <main className="grid items-center lg:grid-cols-5 grid-cols-fluid gap-10">
+      <main className="md:grid md:items-center md:grid-cols-4 md:gap-10 flex-col w-[100%]">
         {products.map((product) => (
           <Product {...product} key={product.id} />
         ))}

@@ -30,8 +30,8 @@ export default function Cart() {
                 {cartStore.onCheckout === 'cart' && (
                     <>
                     {cartStore.cart.map((item) => (
-                        <motion.div layout key={item.id} className="flex p-4 gap-4 bg-base-100 my-4 rounded-lg">
-                            <Image className="rounded-md h-full w-15 object-cover" src={item.image} alt={item.name} width={80} height={80}/>
+                        <motion.div layout key={item.id} className="flex p-4 gap-4 bg-base-100 my-4 h-[15vh]">
+                            <Image className="h-[100%] w-15 object-cover" src={item.image} alt={item.name} width={80} height={80}/>
                             <motion.div layout>
                                 <h2>{item.name}</h2>
                                 <div className="flex gap-2">
@@ -50,7 +50,7 @@ export default function Cart() {
                 {cartStore.cart.length > 0 && cartStore.onCheckout === "cart" ? (
                     <motion.div layout>
                         <p>Total: {formatPrice(totalPrice)}</p>
-                        <button onClick={() => cartStore.setCheckout("checkout")}className="py-2 mt-4 bg-primary w-full  rounded-md text-white">Checkout</button>
+                        <button onClick={() => cartStore.setCheckout("checkout")}className="py-2 mt-4 bg-primary w-full text-white">Checkout</button>
                     </motion.div>
                 ): null }
                 {/* Checkout Form */}

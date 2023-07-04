@@ -18,7 +18,7 @@ export default function AddCart({name, id, image, unit_amount, quantity}: AddCar
 
     return (
         <>
-            <button onClick={handleAddToAcart} disabled={added} className="my-4 btn btn-primary w-full">
+            <button onClick={handleAddToAcart} disabled={added} className="py-2 mt-4 bg-primary w-full text-white mb-4">
                 {!added &&  <span>Add to cart</span>}
                 {added &&  <span>Adding to cart 😃</span>}
             </button>
