@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Navigation } from './Navigation'
 import Product from './Product'
 
-export const HomePage = ({ products }: any) => {
+export const HomePage = ({ products }) => {
   const [selectedCategory, setSelectedCategory] = useState('All')
 
   return (
