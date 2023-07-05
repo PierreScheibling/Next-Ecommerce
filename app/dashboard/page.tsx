@@ -29,10 +29,10 @@ export default async function Dashboard() {
     }
     return (
         <div>
-            <h1 className="font-lobster text-center text-2xl font-thin">Your Orders</h1>
+            <h1 className="text-center text-2xl font-thin">Your Orders</h1>
             <div className="font-medium">
                 {orders.map((order) => (
-                    <div key={order.id} className="flex flex-col rounded-lg pt-6 px-6 pb-3 my-4 bg-base-200">
+                    <div key={order.id} className="flex flex-col pt-6 px-6 pb-3 my-4 bg-base-200">
                         <div className="grid grid-cols-2 mb-2">
                             <p>Date : {new Date(order.createdDate).toLocaleDateString('en-GB')}</p>
                             <p className="flex justify-end">Total: {formatPrice(order.amount)}</p>
@@ -40,11 +40,11 @@ export default async function Dashboard() {
                         <div className="text-xs grid grid-cols-4 items-center gap-2 py-2">
                             {order.products.map((product) => (
                                 <div key={product.id} className="flex">
-                                    <Image src={product.image!} alt={product.name} width={36} height={36} priority={true} className="w-16 h-16 object-cover rounded-md shadow-md"/>
-                                    <div className="flex-col items-center px-3 text-xs font-thin">
-                                        <h2 className="hidden md:block">{product.name}</h2>
-                                        <p className="hidden md:block">{formatPrice(product.unit_amount)}</p>
-                                        <p className="hidden md:block">Quantity: {product.quantity}</p>
+                                    <Image src={product.image!} alt={product.name} width={36} height={36} priority={true} className="w-16 h-16 object-cover"/>
+                                    <div className="flex-col items-center px-3 text-xs font-thin justify-between h-16">
+                                        <h2 className="hidden md:flex">{product.name}</h2>
+                                        <p className="hidden md:flex">{formatPrice(product.unit_amount)}</p>
+                                        <p className="hidden md:flex">Quantity: {product.quantity}</p>
                                     </div>
 
                                 </div>

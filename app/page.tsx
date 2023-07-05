@@ -11,4 +11,3 @@ export default async function Home() {
     </div>
   );
 }
-// .filter((product) => product.category === "Accessories")

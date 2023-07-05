@@ -58,7 +58,7 @@ export default function Nav({user}: Session) {
                     <AiFillShopping size='1.5rem'/>
                     <AnimatePresence>
                         {cartStore.cart.length > 0 && ( 
-                            <motion.span animate={{scale: 1}} initial={{scale: 0}} exit={{scale: 0}} className="bg-primary text-white text-sm font-bold w-5 h-5 rounded-full absolute left-4 bottom-4 flex items-center justify-center">
+                            <motion.span animate={{scale: 1}} initial={{scale: 0}} exit={{scale: 0}} className="bg-black text-white text-sm font-bold w-5 h-5 rounded-full absolute left-4 bottom-4 flex items-center justify-center">
                                 {cartStore.cart.length}
                             </motion.span>
                         )}

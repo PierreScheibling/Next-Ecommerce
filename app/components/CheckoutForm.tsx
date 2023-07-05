@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { PaymentElement, useStripe, useElements } from "@stripe/react-stripe-js"
 import formatPrice from "@/util/PriceFormat"
 import { useCartStore } from "@/store"
-import { spawn } from "child_process"
 
 export default function CheckoutForm({clientSecret}: {clientSecret: string}){
     const stripe = useStripe()
@@ -51,7 +50,7 @@ export default function CheckoutForm({clientSecret}: {clientSecret: string}){
         <form onSubmit={handleSubmit} id='paiement-form'>
             <PaymentElement id="paiement-element" options={{layout: 'tabs'}}/>
             <h1 className="py-4 text-sm font-bold" >Total: {formattedPrice}</h1>
-            <button className={`py-2 mt-4 w-full bg-primary rounded-md text-white disabled:opacity-25`} id='submit' disabled={isLoading || !stripe || !elements}>
+            <button className={`py-2 mt-4 w-full bg-black text-white text-white disabled:opacity-25`} id='submit' disabled={isLoading || !stripe || !elements}>
                 <span id="button-text">
                     {isLoading ? <span>Processing 👀</span> : <span>Pay now 🔥</span>}
                 </span>
