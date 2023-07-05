@@ -1,13 +1,10 @@
 
-import getProducts from '../pages/api/fetchProduct'
-import { HomePage } from './components/HomePage'
+import { Landing } from './components/Landing'
 
 export default async function Home() {
-  const products: any = await getProducts()
-
   return (
     <div>
-      <HomePage products={products} />
+      <Landing />
     </div>
   );
 }

@@ -36,7 +36,7 @@ export const SearchProduct = ({searchParams}: SearchParamTypes) => {
                         {Array.isArray(searchParams.size) && searchParams.size.length > 1 && searchParams.size.map((s) => (
                             <span key={s}
                             className={`items-center mr-2 text-sm cursor-pointer ${
-                              selectedSize === s ? "text-black" : "text-gray-500"
+                              selectedSize === s ? "text-black" : "text-gray-400"
                             }`}
                             onClick={() => handleSizeClick(s)}>{s}</span>
                         ))}

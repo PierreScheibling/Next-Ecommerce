@@ -9,11 +9,12 @@ import { useCartStore } from '@/store'
 import {AiFillShopping} from "react-icons/ai"
 import {motion, AnimatePresence} from "framer-motion"
 import DarkLight from './DarkLight'
+import {BsFillPersonFill} from 'react-icons/bs'
 
 export default function Nav({user}: Session) {
     const cartStore = useCartStore()
     return(
-        <nav className="flex justify-between items-center py-8 lg:py-12">
+        <nav className="flex justify-between items-center py-8">
             <div className="flex items-center">
                 <div className="flex pointer-events-none">
                     <h1 className='font-lobster text-3xl'>Blush.</h1>
@@ -29,7 +30,7 @@ export default function Nav({user}: Session) {
                 >
                     <DarkLight />
                 </motion.div>
-                <Link href={"/landing"} className="flex">
+                <Link href={"/"} className="flex">
                     <motion.div
                         key="home"
                         className="mx-6 text-sm justify-center"
@@ -40,7 +41,7 @@ export default function Nav({user}: Session) {
                     Home
                     </motion.div>
                 </Link>
-                <Link href={"/"} className="flex">
+                <Link href={"/shop"} className="flex">
                     <motion.div
                         key="products"
                         className="mx-6 text-sm justify-center"
@@ -66,8 +67,8 @@ export default function Nav({user}: Session) {
                 </li>
                 {/* If the user is not sign In */}
                 {!user && (
-                    <li className="btn btn-primary text-white py-2 px-4">
-                        <button onClick={() => signIn()}>Sign in</button>
+                    <li className="flex items-center relative cursor-pointer">
+                        <button onClick={() => signIn()}><BsFillPersonFill size='1.5rem'/></button>
                     </li>
                 )}
                 {user && (

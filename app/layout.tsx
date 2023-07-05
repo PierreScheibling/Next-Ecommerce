@@ -1,5 +1,6 @@
 import './globals.css'
 import Nav from './components/Nav'
+import Footer from './components/Footer'
 import {getServerSession} from 'next-auth/next'
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
 import Hydrate from './components/Hydrate'
@@ -25,6 +26,7 @@ export default async function RootLayout({
       <Hydrate>
         <Nav user={session?.user} expires={session?.expires as string}/>
         {children}
+        <Footer/>
       </Hydrate>
     </html>
   )

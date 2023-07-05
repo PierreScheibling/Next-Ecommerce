@@ -17,10 +17,10 @@ export const HomePage = ({ products }) => {
         >
             <Navigation
                 products={products}
-                setSelectedCategory={setSelectedCategory}
+                setSelectedCategory={setSelectedCategory} 
             />
             <AnimatePresence mode="wait">
-                <main className="md:grid md:items-center md:grid-cols-4 md:gap-10 flex-col w-[100%]">
+                <main className="md:grid md:items-center md:grid-cols-3 md:gap-8 flex-col w-[100%]">
                     {products.map((product) => {
                     if (selectedCategory === product.category) {
                         return (
