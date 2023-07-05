@@ -13,30 +13,31 @@ export default function Footer() {
             <div className="flex mb-4 justify-between">
                 <div className="my-4 flex-col">
                     <h1 className="text-sm font-bold my-2">Need Help</h1>
-                    <p className="text-sm cursor-pointer">Want to make a return ?</p>
-                    <p className="text-sm cursor-pointer">Track my order</p>
+                    <p className="text-xs cursor-pointer italic">Want to make a return ?</p>
+                    <p className="text-xs cursor-pointer italic">Track my order</p>
+                    <p className="text-xs cursor-pointer italic">Privacy Policy</p>
+                    <p className="text-xs cursor-pointer italic">Terms & Conditions</p>
                 </div>
                 <div className="my-4 flex-col">
                     <h1 className="text-sm font-bold my-2">Contact</h1>
                     <div className="flex-col">
                         <div>
-                            <a href="mailto:pierre@scheibling.fr" target="_blank" className="text-sm">pierre@scheibling.fr</a>
+                            <a href="mailto:pierre@scheibling.fr" target="_blank" className="text-xs italic">pierre@scheibling.fr</a>
                         </div>
                         <div>
-                            <a href="https://scheibling.netlify.app/" target="_blank" className="text-sm">Portfolio</a>
+                            <a href="https://scheibling.netlify.app/" target="_blank" className="text-xs italic">Portfolio</a>
                         </div>
                     </div>
                 </div>
                 <div className="my-4 flex-col">
-                    <h1 className="text-sm font-bold my-2">About</h1>
-                    <p className="text-sm cursor-pointer">Privacy Policy</p>
-                    <p className="text-sm cursor-pointer">Terms & Conditions</p>
+                    <h1 className="text-sm font-bold my-2">Subscribe to my newsletter</h1>
+                    <input type="text" id="first_name" placeholder="Your email" className="bg-gray-50 border text-xs py-2 pl-3 italic"/>
                 </div>
                 <div className="my-4 flex-col">
-                    <h1 className="text-sm font-bold my-2">Follow Me</h1>
+                    <h1 className="text-xs font-bold my-2">Follow Me</h1>
                     <div className="flex justify-between">
-                        <a href="https://www.linkedin.com/in/pierrescheibling/" target="_blank" className="text-sm"><FaLinkedin size='1.4rem'/></a>
-                        <a href="https://github.com/PierreScheibling" target="_blank"className="text-sm"><FaGithub size='1.4rem'/></a>
+                        <a href="https://www.linkedin.com/in/pierrescheibling/" target="_blank" className="text-sm italic"><FaLinkedin size='1.4rem'/></a>
+                        <a href="https://github.com/PierreScheibling" target="_blank"className="text-sm italic"><FaGithub size='1.4rem'/></a>
                     </div>
                 </div>
             </div>
