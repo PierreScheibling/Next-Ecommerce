@@ -15,10 +15,10 @@ export default function Nav({user}: Session) {
     return(
         <nav className="flex justify-between items-center py-8 lg:py-12">
             <div className="flex items-center">
-                <Link href={"/"} className="flex">
+                <div className="flex pointer-events-none">
                     <h1 className='font-lobster text-3xl'>Blush.</h1>
                     <div className="h-8 border-r pr-4"></div>
-                </Link>
+                </div>
                 {/* {Dark mode} */}
                 <motion.div
                     key="daiklight"
@@ -29,7 +29,7 @@ export default function Nav({user}: Session) {
                 >
                     <DarkLight />
                 </motion.div>
-                <Link href={"/"} className="flex">
+                <Link href={"/landing"} className="flex">
                     <motion.div
                         key="home"
                         className="mx-6 text-sm justify-center"
