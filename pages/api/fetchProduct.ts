@@ -4,7 +4,8 @@ const getProducts = async () => {
     apiVersion: '2022-11-15',
   })
   const products = await stripe.products.list({
-    limit: 30,
+    limit: 8,
+    active: true,
   })
 
   const productWithPrices = await Promise.all(
