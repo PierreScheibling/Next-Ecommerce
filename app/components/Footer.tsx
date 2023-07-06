@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="flex w-[100%] justify-center">
                 <div className="w-[60%] border-t"></div>
             </div>
-            <div className="grid grid-cols-2 md:flex mb-4 justify-between">
+            <div className="grid grid-cols-2 gap-4 md:flex mb-4 justify-between">
                 <div className="my-4 flex-col">
                     <h1 className="text-sm font-bold my-2">Need Help</h1>
                     <p className="text-xs cursor-pointer italic">Want to make a return ?</p>
