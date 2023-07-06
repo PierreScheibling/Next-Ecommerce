@@ -16,21 +16,23 @@ export default function Nav({user}: Session) {
     return(
         <nav className="flex justify-between items-center py-8">
             <div className="flex items-center">
-                <div className="flex pointer-events-none">
-                    <h1 className='font-lobster text-3xl'>Blush.</h1>
+                <div className="flex md:pointer-events-none">
+                    <Link href={"/"} className="flex">
+                        <h1 className='font-lobster text-3xl'>Blush.</h1>
+                    </Link>
                     <div className="h-8 border-r pr-4"></div>
                 </div>
                 {/* {Dark mode} */}
                 <motion.div
                     key="daiklight"
-                    className="mx-6 text-sm justify-center"
+                    className="hidden md:flex mx-6 text-sm justify-center"
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3, duration: 1.5}}
                 >
                     <DarkLight />
                 </motion.div>
-                <Link href={"/"} className="flex">
+                <Link href={"/"} className="hidden md:flex">
                     <motion.div
                         key="home"
                         className="mx-6 text-sm justify-center"

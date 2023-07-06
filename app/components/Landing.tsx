@@ -18,8 +18,8 @@ export const Landing = () => {
                 <motion.div initial={{ opacity: 0 }}
                     animate={{ opacity: 1, transition: {delay: 0.4} }}
                     exit={{ opacity: 0, transition: {duration: 1} }}
-                    className="absolute bottom-[33%] left-[20%] flex-col justify-center align-center w-[60%]">
-                    <h1 className="font-lobster flex justify-center text-5xl my-12 text-black font-extralight">Discover our Summer Collection</h1>
+                    className="absolute bottom-[45%] md:bottom-[33%] left-[20%] flex-col justify-center align-center w-[60%]">
+                    <h1 className="hidden font-lobster md:flex justify-center text-5xl my-12 text-black font-extralight">Discover our Summer Collection</h1>
                     <Link href={"/shop"} className="flex align-center justify-center">
                         <motion.div 
                             whileHover={{ scale: 1.05 }}
